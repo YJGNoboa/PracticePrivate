@@ -1,0 +1,14 @@
+C:\dev\Seccion 6\PracticeFinalSeccion7\bin\Debug\net9.0\PracticeFinalSeccion7.exe
+C:\dev\Seccion 6\PracticeFinalSeccion7\bin\Debug\net9.0\PracticeFinalSeccion7.deps.json
+C:\dev\Seccion 6\PracticeFinalSeccion7\bin\Debug\net9.0\PracticeFinalSeccion7.runtimeconfig.json
+C:\dev\Seccion 6\PracticeFinalSeccion7\bin\Debug\net9.0\PracticeFinalSeccion7.dll
+C:\dev\Seccion 6\PracticeFinalSeccion7\bin\Debug\net9.0\PracticeFinalSeccion7.pdb
+C:\dev\Seccion 6\PracticeFinalSeccion7\obj\Debug\net9.0\PracticeFinalSeccion7.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\Seccion 6\PracticeFinalSeccion7\obj\Debug\net9.0\PracticeFinalSeccion7.AssemblyInfoInputs.cache
+C:\dev\Seccion 6\PracticeFinalSeccion7\obj\Debug\net9.0\PracticeFinalSeccion7.AssemblyInfo.cs
+C:\dev\Seccion 6\PracticeFinalSeccion7\obj\Debug\net9.0\PracticeFinalSeccion7.csproj.CoreCompileInputs.cache
+C:\dev\Seccion 6\PracticeFinalSeccion7\obj\Debug\net9.0\PracticeFinalSeccion7.dll
+C:\dev\Seccion 6\PracticeFinalSeccion7\obj\Debug\net9.0\refint\PracticeFinalSeccion7.dll
+C:\dev\Seccion 6\PracticeFinalSeccion7\obj\Debug\net9.0\PracticeFinalSeccion7.pdb
+C:\dev\Seccion 6\PracticeFinalSeccion7\obj\Debug\net9.0\PracticeFinalSeccion7.genruntimeconfig.cache
+C:\dev\Seccion 6\PracticeFinalSeccion7\obj\Debug\net9.0\ref\PracticeFinalSeccion7.dll
