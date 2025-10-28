@@ -1,4 +1,5 @@
-﻿namespace PracticeFinalSeccion7
+﻿//Program.cs
+namespace PracticeFinalSeccion7
 {
     class Program
     {
@@ -22,11 +23,19 @@
             rfc = Console.ReadLine();
 
             Console.Write("Insert your initial balance: ");
-            balanceInitial = double.Parse(Console.ReadLine());
+            while (true)
+            {
+                if (double.TryParse(Console.ReadLine(), out balanceInitial))
+                {
+                    break;
+                }
+                Console.WriteLine("Error, this field only admit numbers");
 
-            BankAcount bankAcount = new BankAcount(name, lastName, balanceInitial, address, rfc);
+            }
+            Client client1 = new Client(name, lastName, address, rfc);
+            BankAccount bankAcount1 = new BankAccount(balanceInitial);
 
-            Console.WriteLine("Congratulation, his account has been created with succesful, press any key for continue");
+            Console.WriteLine("Congratulation, your account has been created with succesful, press any key for continue");
             Console.ReadKey();
 
             do
@@ -37,88 +46,66 @@
                 Console.WriteLine("3. Check your balance");
                 Console.WriteLine("4. Show information");
                 Console.WriteLine("5. salir");
-
+                Console.WriteLine("=====================");
                 Console.WriteLine("\n select a option");
-                option = byte.Parse(Console.ReadLine());
+                while (true)
+                {
+                    if (byte.TryParse(Console.ReadLine(), out option))
+                    {
+                        break;
+                    }
+                    Console.WriteLine("This fiel only admit number between 1 to 5");
+                }
 
                 switch (option)
                 {
                     case 1:
                         Console.WriteLine("How much money you wish to deposit: ");
-                        money = double.Parse(Console.ReadLine());
-                        bankAcount.Deposit(money);
+                        while (true)
+                        {
+                            if (double.TryParse(Console.ReadLine(), out money) && money > 0)
+                            {
+                                bankAcount1.Deposit(money);
+                                Console.WriteLine("Press enter for continue");
+                                Console.ReadKey();
+                                break;
+                            }
+                            Console.WriteLine("Error, this field only admit numbers postive");
+
+                        }
                         Console.WriteLine("deposit succesful");
                         break;
                     case 2:
                         Console.WriteLine("How much money you wish withdrawn");
-                        money = double.Parse(Console.ReadLine());
-                        bankAcount.Withdraw(money);                        
+                        while (true)
+                        {
+                            if (double.TryParse(Console.ReadLine(), out money) && money > 0)
+                            {
+                                bankAcount1.Withdraw(money);
+                                Console.WriteLine("Press enter for continue");
+                                Console.ReadKey();
+                                break;
+                            }
+                            Console.WriteLine("Error, this field only admit numbers positive");
+                        }
+                        Console.WriteLine("Withdrawal successful.");
                         break;
                     case 3:
-                        bankAcount.CheckYourBalance();
+                        bankAcount1.CheckYourBalance();
+                        Console.WriteLine("Press enter for continue");
+                        Console.ReadKey();
                         break;
                     case 4:
-                        Console.WriteLine(bankAcount.ToString());
+                        Console.WriteLine(client1.ToString());
+                        Console.WriteLine("Press enter for continue");
+                        Console.ReadKey();
                         break;
                     case 5: Console.WriteLine("Thank you for use our system"); break;
-                    default: Console.WriteLine("Option avaible: To deposite(1), withdraw(2), check balance(3), show information(4), exit(5)"); break;
+                    default: Console.WriteLine("Available options: To deposite(1), withdraw(2), check balance(3), show information(4), exit(5)"); break;
                 }
             } while (option >= 1 && option <= 4);
             Console.ReadKey();
         }
-
-            
     }
-    class BankAcount
-    {
-        private string name, lastName, address, rfc;
-        private double balanceInitial;
-
-        public BankAcount(string namePa, string lastNamePa, double balanceInitialPa, string addressPa, string rfcPa)
-        {
-            name = namePa;
-            lastName = lastNamePa;
-            address = addressPa;
-            rfc = rfcPa;
-            balanceInitial = balanceInitialPa;
-
-            if (balanceInitial < 0)
-            {
-                throw new Exception("Initial balance cannot be negative");
-            }
-
-
-        }
-
-        public double Deposit(double moneyPa)
-        {   
-            balanceInitial += moneyPa;
-            return balanceInitial;
-        }
-        public double Withdraw(double moneyPa)
-        {
-            if (moneyPa >= balanceInitial)
-            {
-                Console.WriteLine("You don't have enough money for withdraw: ");
-
-            }
-            else
-            {
-                Console.WriteLine("Withdraw succesful");
-                balanceInitial -= moneyPa;
-            }
-            return balanceInitial;
-        }
-        public void CheckYourBalance()
-        {
-            Console.WriteLine("You real balance is: " + balanceInitial);
-        }
-        public override string ToString()
-        {
-            string message;
-
-            message = "Name: " + name + " " + lastName + "\naddres: " + address + "\nRFC " + rfc;
-            return message;
-        }
-    }
+    
 }
